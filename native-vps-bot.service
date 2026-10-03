@@ -1,0 +1,15 @@
+[Unit]
+Description=Native LXC Discord VPS Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/native-vps-discord-bot
+ExecStart=/opt/native-vps-discord-bot/.venv/bin/python /opt/native-vps-discord-bot/bot.py
+Restart=on-failure
+RestartSec=5
+User=root
+
+[Install]
+WantedBy=multi-user.target
